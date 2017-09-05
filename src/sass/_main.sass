@@ -1,0 +1,378 @@
+*, *:after, *:before
+	box-sizing: border-box
+a 
+	text-decoration: none
+img
+	display: block
+
+html
+	height: 100%
+	font-size: 16px
+body
+	height: 100%
+	font-family: $f
+	color: #000
+	font-weight: 300
+	color: color(white)
+	background-color: color(bodybg)
+
+.title
+	+rem(font-size,35px)
+	text-align: center
+	line-height: 1.286;
+	background-image: color(gradient)
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	+rem(letter-spacing,1px)
+	filter: brightness(120%)
+.text 
+	+rem(font-size,20px)
+	line-height: 1.5;
+
+
+.page__bg
+	+coverdiv
+	z-index: -1
+	&-inner
+		height: 100%
+		width: 100%
+		+cover
+// background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAzBAMAAAB22XVEAAAAHlBMVEVHcEyysrOysrOysrOysrOysrOysrOysrOysrOysrOItbUoAAAACXRSTlMA3/dHHyDPBH4UfSa9AAAAN0lEQVQoz2NgcGFABiyCDsjcspkiyFxmzYko0kaj0pRLc8ychioriqo3YFSSBMkyFEn09Iya2gGxhi5U7lxkVwAAAABJRU5ErkJggg==);
+.btn 
+	display: inline-block
+	vertical-align: top
+	outline: none
+	background-image: color(gradient)
+	line-height: 1
+	background-size: 150% auto;
+	transition: .5s;
+	cursor: pointer
+	color: color(black)
+	border-radius: 4px
+	background-position: laft center
+	span 
+		+rem(font-size,16px)
+		display: inline-block
+		+rem(padding,17px 25px)
+		font-weight: 400
+	&:hover
+		background-position: right center
+
+.wrapper
+	overflow: hidden
+	display: block
+	width: 100%
+	position: relative
+	&.about
+		.page__bg-inner
+			background-size: 40%
+			background-position: left 35% top 25%
+.box
+	display: flex
+	+rem(max-width,1080px)
+	+padlr(20px)
+	+rem(padding-top,50px)
+	+rem(padding-bottom,50px)
+	margin: 0 auto
+	position: relative
+	z-index: 1
+	min-height: 100vh
+	flex-flow: row nowrap
+	align-items: center
+	.content
+		width: 100%
+.header,.form
+	display: block
+	margin: 0 auto
+	+rem(max-width,477px)
+	text-align: center
+	
+	.text 
+		text-align: center
+	.btn 
+.form
+	.title
+		+rem(margin-top,10px)
+		+rem(margin-bottom,15px)
+	.text
+		+rem(margin-bottom,40px)
+		
+
+.input
+	&-item
+		display: block
+		+rem(margin-bottom,25px)
+		+rem(margin-top,25px)
+		width: 100%
+		+r(600)
+			+rem(margin-bottom,30px)
+	&-wrapper
+		width: 100%
+		display: inline-block
+		position: relative
+		+tr(border-bottom .3s)
+		text-align: left
+		z-index: 0
+		.form-error
+			color: red;
+			font-weight: 400
+			position: absolute
+			+rem(right,12px)
+			+rem(top,10px)
+			z-index: 2
+			+rem(font-size,14px)
+			+r(600)
+				+rem(font-size,12px)
+				+rem(right,8px)
+				+rem(top,9px)
+			// opacity: 1
+			backface-visibility: hidden
+		&.has-error
+			.input-main
+				border-color: #ff0000
+	&-main
+		background: 0 0
+		width: 100%
+		display: inline-block
+		+rem(font-size,18px)
+		color: color(white)
+		line-height: 1
+		font-family: $f
+		+rem(padding,32px 24px 11px)
+		font-weight: 300
+		position: relative
+		+tr(all .3s)
+		background-color: rgba(18, 18, 18, .8)
+		&:focus 
+			background-color: color(black)
+			&~.input-line
+				.input-line-inner
+					&:before
+						transform: scale(1)
+	&-label
+		color: #999; 
+		+rem(font-size,18px)
+		font-weight: 300;
+		position: absolute;
+		pointer-events: none;
+		color: #fff
+		+rem(top,21px)
+		+rem(left,24px)
+		transition: 0.2s ease all; 
+		z-index: 1
+	&-line 
+		position: absolute
+		height: 2px
+		left: 0
+		right: 0
+		&-inner
+			width: 100%
+			height: 100%
+			position: relative
+			+tr(background-color .3s)
+			background-color: #FFF
+			&:before
+				content: ''
+				display: inline-block
+				+coverdiv
+				background-image: color(gradient)
+				+tr(transform .3s ease-in-out)
+				transform: scale(0)
+.page-head
+	.box
+		+rem(padding-bottom,30px)
+	&-arrd
+		position: absolute
+		display: inline-block
+		+rem(width,20px)
+		+rem(height,10px)
+		left: 50%
+		transform: translateX(-20px)
+		+rem(bottom,100px)
+		animation: sdb 1.5s infinite;
+		svg
+			width: 100%
+@keyframes sdb
+	0%
+		transform: translate(-10px, 0);
+		opacity: 0;
+	50%
+		opacity: .7;
+	100%
+		transform: translate(-10px, 10px);
+		opacity: 0;	
+
+
+
+
+
+.input-main:focus ~ .input-label,.input-wrapper.has-success .input-label,.input-wrapper.has-error .input-main:focus ~ .input-label
+	+rem(font-size,13px)
+	color: #dcdcdc
+	+rem(top,11.5px)
+.input-main:focus,.input-wrapper.has-success .input-main,.input-wrapper.has-error
+	// opacity: 1
+// .input-main:focus ~  .form-error
+	// opacity: 0
+// .input-wrapper.has-error .input-main:not(:focus)
+// 	color: #fefefe
+
+.input-wrapper.has-error .input-label
+	+rem(font-size,18px)
+	color: #dcdcdc
+	+rem(top,21px)
+.input-wrapper.has-error .input-main
+	color: transparent	
+.input-wrapper.has-error .input-line
+	&-inner
+		background-color: red
+.input-wrapper.has-error .input-main:focus
+	color: #fff
+.input-wrapper.has-success .input-main
+	background-color: color(black)
+
+.select-u-item
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  +rem(margin-bottom, 10px);
+  +rem(margin-top, 23px);
+  +nosel
+  &:hover,&.hover
+    .input-text
+      transition: color .3s;
+    .input-checked
+      border-color: color(primary);
+  .input_label
+    display: inline-block;
+    +rem(min-width, 15px)
+    cursor: pointer;
+    width: 100%;
+    .input_main
+      float: left;
+      position: relative;
+      display: inline-block;
+      +rem(padding-bottom,5px)
+      &.has-error
+        .input-checked
+            border-color: color(error)
+  .input-text
+    +rem(font-size, 15px)
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    +rem(padding-left, 17px)
+    +rem(padding-top, 3px)
+    white-space: normal
+    color: #fff
+    
+    transition: color .3s;
+  .input-real
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    &:checked +.input-checked:before,&.active +.input-checked:before
+      opacity: 1;
+    &:checked +.input-checked,&.active +.input-checked
+      // border: 1px solid color(primary);
+  .input-checked
+    +rem(width, 30px)
+    +rem(height, 30px)
+    display: block;
+    +rem(margin-top,1px);
+    background: #fff;
+    border: 1px solid color(white)
+    position: relative;
+    background: 0 0
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+    &:before
+      content: '';
+      +rem(width, 20px)
+      +rem(height, 20px)
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAYCAMAAAClZq98AAAAZlBMVEVHcEz6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uir6uiruJI0gAAAAIXRSTlMA13AGzcIWCvwOu8VTtnt0bGQSX1hN+RsCgWgQ0p6Cf/YkpOhRAAAAlklEQVR42q3R2w6CQAwE0IKIeBcVFVFx/v8nXRPCBGalL85Td3uS7sW8XCvzTVKcfQO882mTB3Op/mQ2jnkARWduatU88YqZYwb0t08B1I6x2TaodmyarzmZDdRuaJY0otQwi1VQe6NZAyi5VkUTVWlXzwHcR4CdtK8OKtibMpzCuRKeN1Gjirf8qTJ5+/jP1+amKaPbH6/dEKfqopa6AAAAAElFTkSuQmCC);
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+      display: block;
+      position: absolute;
+      bottom: 4px;
+      +rem(left, 4px)
+      opacity: 0;
+      transition: all .2s ease;
+.about-content
+	display: block
+	+rem(max-width,690px)
+	margin: 0 auto
+	text-align: center
+	.title
+		+rem(margin-bottom,20px)
+	.text
+		+rem(margin-bottom,40px)	
+.slider
+	&-wrap
+		+r(600)
+			+rem(margin, 0 -20px)
+		padding-bottom: 70%
+		position: relative
+		+rem(margin-top,55px)
+		+r(1450)
+			margin-top: 0
+		.flickity-viewport
+			width: 100%
+		.flickity-prev-next-button
+			filter: brightness(120%)	
+			+r(600)
+				+rem(width,45px)
+				+rem(height,45px)
+			&.previous
+				transform: translateY(-50%) scale(-1,1)
+	&-inner
+		height: 100%
+		+coverdiv
+		.flickity-slider
+			will-change: transform
+
+	&-element
+		overflow: hidden
+		width: 100%
+		backface-visibility: hidden
+		height: 100%
+
+		&-inner
+			width: 100%
+			height: 100%
+			+cover
+			will-change: transform
+			contain: paint
+			+vertical
+			iframe
+				width: 100%
+				backface-visibility: hidden
+				display: inline-block
+				vertical-align: middle
+				height: 100%
+				
+	&-counter 
+		position: relative
+		+rem(margin-top,40px)
+		+r(1450)
+			+rem(margin-top,25px)
+		.carousel-status
+			+rem(letter-spacing,3px)
+		.previous
+			left: auto
+			right: 55%
+		.next
+			right: auto
+			left: 54%
+		button 
+			background: 0 0 
+			+rem(width,25px)
+			+rem(height,25px)
+			svg 
+				left: 0
+				top: 0
+		.arrow
+			fill: #fff !important
