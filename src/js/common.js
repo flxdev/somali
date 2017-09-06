@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	validateForms();
 	Slider();
 	scrollAnimations();
-	new Formatter(document.getElementById('birth'), {
-	  'pattern': '{{99}}/{{99}}/{{9999}}'
-	});
+	masktel();
+	// new Formatter(document.getElementById('birth'), {
+	//   'pattern': '{{99}}/{{99}}/{{9999}}'
+	// });
+
 });
 
 function scrollAnimations(){
@@ -18,7 +20,14 @@ function scrollAnimations(){
 			el.classList.add('active');
 		});
 }
-
+function masktel(){
+	var nodes = document.getElementById("birth");
+	var im = new Inputmask("99/99/9999",{ 
+		showMaskOnHover: false,
+		"placeholder": "ДД/ММ/ГГГГ",
+	});
+	im.mask(nodes);
+}
 function validateForms() {
 	var form_form = $('.js-validate');
 	if (form_form.length) {

@@ -1428,6 +1428,12 @@ body {
   .text {
     font-size: 1.0625rem; }
 
+  .form {
+    margin-top: 1.875rem; }
+
+  .form .text {
+    margin-bottom: 1.25rem; }
+
   .input-item {
     margin-bottom: 1.875rem; }
 
@@ -1454,6 +1460,15 @@ body {
 
   .block-border {
     margin: 0 -0.625rem; }
+
+  .block-border .title span:before, .block-border .title span:after {
+    top: 1.3125rem; }
+
+  .block-border .title span:before {
+    right: 96%; }
+
+  .block-border .title span:after {
+    left: 96%; }
 
   .block-border .list-wrap {
     -webkit-box-orient: horizontal;

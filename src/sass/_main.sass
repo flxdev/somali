@@ -118,11 +118,15 @@ body
 	.btn 
 .form
 	position: relative
+	+r(600)
+		+rem(margin-top,30px)
 	.title
 		+rem(margin-top,10px)
 		+rem(margin-bottom,15px)
 	.text
 		+rem(margin-bottom,40px)
+		+r(600)
+			+rem(margin-bottom,20px)	
 	&:not(.complete)
 		.form-succes
 			opacity: 0
@@ -451,6 +455,14 @@ body
 		+rem(margin, 0 -10px)
 	.title
 		+rem(margin-top,-22px)
+		+r(600)
+			span 
+				&:before,&:after
+					+rem(top,21px)
+				&:before
+					right: 96%
+				&:after
+					left: 96%
 	.btn 
 		// +rem(margin-bottom,70px)
 		margin-bottom: 7vh
