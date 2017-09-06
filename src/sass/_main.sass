@@ -25,11 +25,37 @@ body
 	-webkit-text-fill-color: transparent;
 	+rem(letter-spacing,1px)
 	filter: brightness(120%)
+	+r(600)
+		+rem(font-size,28px)
+	&.lines 
+		overflow: hidden
+		span 
+			display: inline-block
+			position: relative
+			z-index: 1
+			+padlr(25px)
+			background-image: color(gradient)
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			+r(600)
+				+padlr(15px)	
+			&:before,&:after
+				content: ''
+				display: inline-block
+				height: 1px
+				background-color: #FFF
+				width: 100vw
+				position: absolute
+				top: 51%
+			&:before
+				right: 100%
+			&:after
+				left: 100%
 .text 
 	+rem(font-size,20px)
 	line-height: 1.5;
-
-
+	+r(600)
+		+rem(font-size,17px)	
 .page__bg
 	+coverdiv
 	z-index: -1
@@ -91,11 +117,41 @@ body
 		text-align: center
 	.btn 
 .form
+	position: relative
 	.title
 		+rem(margin-top,10px)
 		+rem(margin-bottom,15px)
 	.text
 		+rem(margin-bottom,40px)
+	&:not(.complete)
+		.form-succes
+			opacity: 0
+			visibility: hidden
+			transform: translateY(30px)
+			// display: none
+	&-succes
+		// +coverdiv
+		background-color: color(bodybg)
+		// z-index: 1
+		transition: transform .3s, opacity .3s, visibility .3s
+		border-radius: 4px
+		position: absolute
+		bottom: 80px
+		left: 0
+		right: 0
+		border: 1px solid #fff
+		&-inner
+			width: 100%
+			height: 100%
+			+vertical
+			+padlr(20px)
+			.text
+				display: inline-block
+				margin: 0
+				vertical-align: middle
+				padding-top: 10px
+				padding-bottom: 10px
+				
 		
 
 .input
@@ -143,8 +199,12 @@ body
 		position: relative
 		+tr(all .3s)
 		background-color: rgba(18, 18, 18, .8)
+		+placeholder 
+			color: transparent 
 		&:focus 
 			background-color: color(black)
+			+placeholder 
+				color: color(white) 
 			&~.input-line
 				.input-line-inner
 					&:before
@@ -192,6 +252,9 @@ body
 		animation: sdb 1.5s infinite;
 		svg
 			width: 100%
+		+r(600)
+			display: none
+			
 @keyframes sdb
 	0%
 		transform: translate(-10px, 0);
@@ -364,9 +427,13 @@ body
 		.previous
 			left: auto
 			right: 55%
+			+r(600)
+				right: 57%
 		.next
 			right: auto
 			left: 54%
+			+r(600)
+				left: 56%
 		button 
 			background: 0 0 
 			+rem(width,25px)
@@ -376,3 +443,183 @@ body
 				top: 0
 		.arrow
 			fill: #fff !important
+.block-border
+	border: 1px solid color(white)
+	border-top-color: transparent
+	text-align: center
+	+r(600)
+		+rem(margin, 0 -10px)
+	.title
+		+rem(margin-top,-22px)
+	.btn 
+		// +rem(margin-bottom,70px)
+		margin-bottom: 7vh
+		width: 100%
+		+rem(max-width,310px)
+	.list-wrap
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		align-items: flex-start
+		+r(600)
+			flex-flow: row wrap
+			+rem(margin,35px 0)
+	ul 
+		display: block
+		text-align: center
+		+rem(margin-bottom,10px)
+		+padlr(25px)
+		+rem(margin,40px auto 50px)
+		+rem(max-width,450px)
+		+r(600)
+			width: 100%
+			+rem(margin,0)
+			display: block
+			+padlr(15px)
+		li 
+			text-align: left
+			position: relative
+			+rem(font-size,20px)
+			line-height: 1.5;
+			+rem(padding-left,20px)
+			+r(600)
+				+rem(margin, 5px 0)
+				+rem(font-size,16px)
+			&:before
+				content: ''
+				display: inline-block
+				+rem(width,6px)
+				+rem(height,6px)
+				border-radius: 50%
+				border: 1.5px solid #f7a80d
+				position: absolute
+				left: 0
+				+rem(top,8px)
+
+
+.footer-content
+	.text
+		text-align: center
+		+rem(margin, 20px auto)
+		margin-bottom: 12vh
+		+rem(max-width,700px)
+.footer-footer-content
+	text-align: center
+	margin-top: 8vh
+	margin-bottom: 3vh
+	.title
+		margin-bottom: 2vh
+	a 
+		display: inline-block
+		color: #faba2a
+		position: relative
+		+rem(font-size,20px)
+		margin-top: 1vh
+		&:before
+			content: ''
+			display: inline-block
+			height: 1px
+			background-color: #faba2a
+			transition: width .3s;
+			width: 100%;
+			left: 0;
+			right: 0;
+			position: absolute
+			bottom: -1px
+		&:hover
+			&:before
+				width: 0;
+				left: auto;
+				right: 0;
+.features
+	&-wrap
+		margin-top: 6vh
+		font-size: 0
+		+rem(margin-right,-100px)
+		counter-reset: num
+		.textblock
+			counter-increment: num
+			position: relative
+			&:before
+				content: counter(num ) '.'
+				+rem(font-size,20px)
+				color: color(white)
+				position: absolute
+				top: 0
+				left: 0
+				+r(600)
+					+rem(font-size,17px)
+	&-item 
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		+rem(padding-right,100px)
+		margin-bottom: 11.5vh
+		+rem(padding-left,34px)
+		+r(600)
+			+rem(padding-left,25px)
+		+r(800)
+			width: 100%
+			&:not(.textblock)
+				padding-left: 0
+		&:first-child
+			transition-delay: .1s
+		&:nth-child(2)
+			transition-delay: .25s
+		&:nth-child(3)
+			transition-delay: .40s
+		&:nth-child(4)
+			transition-delay: .55s
+		.text
+			+rem(letter-spacing,.4px)
+			font-weight: 300
+			span 
+				color: #faba2a
+			&.sm 
+				+rem(font-size,15px)
+				color: rgb(220, 220, 220);
+				line-height: 1.733;
+				+rem(margin-top,25px)
+
+		img 
+			// max-width: 100%
+			display: block
+			+rem(max-width,320px)
+			box-shadow: -17px 17px 50px 0px rgba(0, 0, 0, 0.3);
+
+			+r(800)
+				// max-width: 100%
+				+rem(max-width,380px)
+				margin: 0 auto
+				// margin-left: -5vw
+			+r(500)
+				max-width: 100%
+		.feat-item
+			display: inline-block
+			vertical-align: top
+			width: 33.33%
+			+rem(margin-top,30px)
+			+r(900)
+				width: 50%
+			+r(800)
+				width: 33.33%
+			+r(600)
+				.text 
+					+rem(font-size,15px)
+			&-persent
+				+rem(font-size,45px)
+				color: #faba2a
+				+r(600)
+					+rem(font-size,35px)
+.hr 
+	display: block
+	margin-top: 2vh
+	height: 2px
+.footer
+	.header
+		+rem(margin-top,-18px)
+.anim-cont
+	transition: transform .5s, opacity .5s
+	&:not(.active)
+		transform: translateY(50px)
+		opacity: 0

@@ -2,9 +2,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	validateForms();
 	Slider();
+	scrollAnimations();
+	new Formatter(document.getElementById('birth'), {
+	  'pattern': '{{99}}/{{99}}/{{9999}}'
+	});
 });
 
-
+function scrollAnimations(){
+	inView.offset({
+		top: 0,
+		bottom: 100,
+	});
+	inView('.anim-cont')
+		.on('enter', function(el){
+			el.classList.add('active');
+		});
+}
 
 function validateForms() {
 	var form_form = $('.js-validate');
@@ -13,10 +26,15 @@ function validateForms() {
 			var form_this = $(this);
 			$.validate({
 				form: form_this,
-				modules: 'logic',
 				borderColorOnError: true,
 				scrollToTopOnError: false,
 				onSuccess: function($form) {
+					form_this[0].reset();
+					form_this.addClass('complete');
+					setTimeout(function(){
+						form_this.removeClass('complete');
+					},1500);
+					return false
 				},
 			});
 		});
