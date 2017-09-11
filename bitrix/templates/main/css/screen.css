@@ -1300,6 +1300,11 @@ body {
   font-size: 0;
   margin-right: -6.25rem;
   counter-reset: num; }
+  .features-wrap .btn {
+    display: block;
+    margin: -1.5625rem auto;
+    max-width: 15.625rem;
+    text-align: center; }
   .features-wrap .textblock {
     counter-increment: num;
     position: relative; }
@@ -1319,6 +1324,8 @@ body {
   padding-right: 6.25rem;
   margin-bottom: 11.5vh;
   padding-left: 2.125rem; }
+  .features-item.w100p {
+    width: 100%; }
   .features-item:first-child {
     -webkit-transition-delay: .1s;
     transition-delay: .1s; }

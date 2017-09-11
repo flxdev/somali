@@ -2,4 +2,4 @@
 
 require "SendMail.php";
 
-new \FlexMedia\SendMail($_REQUEST, array("send_to" => "email@email.ru", "subject" => "Subject"));
+new \FlexMedia\SendMail($_REQUEST, array("send_to" => "info@gildia-sommelier.com", "subject" => "Заполнена форма на сайте"));

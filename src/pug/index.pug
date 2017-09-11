@@ -7,7 +7,7 @@ block title
 block content
 	.wrapper.page-header
 		.page__bg
-			.page__bg-inner(style='background-image: url(/img/bgheader.jpg)')
+			.page__bg-inner(style='background-image: url(img/bgheader.jpg)')
 		.box
 			.content
 				.header
@@ -42,25 +42,25 @@ block content
 					.text Заполните анкетные данные и мы вам перезвоним
 					.input-item
 						.input-wrapper
-							input#nameInp.input-main(type='text', name='name', data-validation='length', data-validation-length='min10', data-validation-error-msg='Поле заполнено неправильно', data-validation-has-keyup-event='true')
+							input#nameInp.input-main(type='text' name='name', data-validation='length', data-validation-length='min10' autocomplete='off', data-validation-error-msg='Введите ФИО без сокращений',placeholder="Иванов Иван Иванович")
 							label.input-label(for='#nameInp') ФИО
 							.input-line
 								.input-line-inner
 					.input-item
 						.input-wrapper
-							input#birth.input-main(type='tel', name='birth', data-validation='custom', data-validation-error-msg='Поле заполнено неправильно',data-validation-regexp="^[-0-9()+/ ]+$" ,data-validation-has-keyup-event='true', placeholder='ДД/ММ/ГГГГ')
+							input#birth.input-main(type='tel', name='birth',data-validation='custom', data-validation-regexp='^[-0-9()/+ ]+$',data-validation-error-msg='Поле заполнено неправильно', placeholder='ДД/ММ/ГГГГ')
 							label.input-label(for='#birth') Дата рождения
 							.input-line
 								.input-line-inner
 					.input-item
 						.input-wrapper
-							input#mailInp.input-main(type='email', name='email', data-validation='email required', data-validation-error-msg='Поле заполнено неправильно', data-validation-has-keyup-event='true')
+							input#mailInp.input-main(type='email', name='email', data-validation='email required', data-validation-error-msg='Поле заполнено неправильно')
 							label.input-label(for='#mailInp') Email 
 							.input-line
 								.input-line-inner
 					.input-item
 						.input-wrapper
-							input#telInp.input-main(type='tel', name='tel', data-validation='custom', data-validation-regexp='^[-0-9()+ ]+$', data-validation-error-msg='Поле заполнено неправильно', data-validation-has-keyup-event='true')
+							input#telInp.input-main(type='tel', name='tel', data-validation='custom', data-validation-regexp='^[-0-9()+ ]+$', data-validation-error-msg='Поле заполнено неправильно')
 							label.input-label(for='#telInp') Телефон  
 							.input-line
 								.input-line-inner
@@ -104,7 +104,7 @@ block content
 							.carousel-status
 	.wrapper.footer
 		.page__bg
-			.page__bg-inner(style='background-image: url(/img/bgfooter.png);')
+			.page__bg-inner(style='background-image: url(img/bgfooter.png);')
 		.box
 			.content
 				.footer-content.anim-cont

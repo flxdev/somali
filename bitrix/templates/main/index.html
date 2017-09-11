@@ -21,7 +21,7 @@
     <div class="root">
       <div class="wrapper page-header">
         <div class="page__bg">
-          <div class="page__bg-inner" style="background-image: url(/img/bgheader.jpg);"></div>
+          <div class="page__bg-inner" style="background-image: url(img/bgheader.jpg);"></div>
         </div>
         <div class="box">
           <div class="content">
@@ -62,12 +62,12 @@
                 <path fill="#D7D7D7" fill-rule="evenodd" d="M0 26.2h45.9v.4H0zm73.5 0h45.9v.4H73.5z" clip-path="url(#h)" clip-rule="evenodd"></path>
               </svg>
             </div>
-            <form class="js-validate form anim-cont send-mail" action="/bitrix/templates/main/_scripts/send_mail.php">
+            <form class="js-validate form anim-cont" action="/">
               <div class="title">Хотите клубную карту?</div>
               <div class="text">Заполните анкетные данные и мы вам перезвоним</div>
               <div class="input-item">
                 <div class="input-wrapper">
-                  <input class="input-main" id="nameInp" type="text" name="name" data-validation="length" data-validation-length="min10" data-validation-error-msg="Поле заполнено неправильно" data-validation-has-keyup-event="true">
+                  <input class="input-main" id="nameInp" type="text" name="name" data-validation="length" data-validation-length="min10" autocomplete="off" data-validation-error-msg="Введите ФИО без сокращений" placeholder="Иванов Иван Иванович">
                   <label class="input-label" for="#nameInp">ФИО</label>
                   <div class="input-line">
                     <div class="input-line-inner"></div>
@@ -76,7 +76,7 @@
               </div>
               <div class="input-item">
                 <div class="input-wrapper">
-                  <input class="input-main" id="birth" type="tel" name="birth" data-validation="custom" data-validation-error-msg="Поле заполнено неправильно" data-validation-regexp="^[-0-9()+/ ]+$" data-validation-has-keyup-event="true" placeholder="ДД/ММ/ГГГГ">
+                  <input class="input-main" id="birth" type="tel" name="birth" data-validation="custom" data-validation-regexp="^[-0-9()/+ ]+$" data-validation-error-msg="Поле заполнено неправильно" placeholder="ДД/ММ/ГГГГ">
                   <label class="input-label" for="#birth">Дата рождения</label>
                   <div class="input-line">
                     <div class="input-line-inner"></div>
@@ -85,7 +85,7 @@
               </div>
               <div class="input-item">
                 <div class="input-wrapper">
-                  <input class="input-main" id="mailInp" type="email" name="email" data-validation="email required" data-validation-error-msg="Поле заполнено неправильно" data-validation-has-keyup-event="true">
+                  <input class="input-main" id="mailInp" type="email" name="email" data-validation="email required" data-validation-error-msg="Поле заполнено неправильно">
                   <label class="input-label" for="#mailInp">Email </label>
                   <div class="input-line">
                     <div class="input-line-inner"></div>
@@ -94,7 +94,7 @@
               </div>
               <div class="input-item">
                 <div class="input-wrapper">
-                  <input class="input-main" id="telInp" type="tel" name="tel" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле заполнено неправильно" data-validation-has-keyup-event="true">
+                  <input class="input-main" id="telInp" type="tel" name="tel" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле заполнено неправильно">
                   <label class="input-label" for="#telInp">Телефон  </label>
                   <div class="input-line">
                     <div class="input-line-inner"></div>
@@ -159,7 +159,7 @@
       </div>
       <div class="wrapper footer">
         <div class="page__bg">
-          <div class="page__bg-inner" style="background-image: url(/img/bgfooter.png);"></div>
+          <div class="page__bg-inner" style="background-image: url(img/bgfooter.png);"></div>
         </div>
         <div class="box">
           <div class="content">
@@ -193,6 +193,5 @@
     <script src="js/bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.60/jquery.form-validator.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/custom.js"></script>
   </body>
 </html>

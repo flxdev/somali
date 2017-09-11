@@ -21,12 +21,40 @@ function scrollAnimations(){
 		});
 }
 function masktel(){
-	var nodes = document.getElementById("birth");
-	var im = new Inputmask("99/99/9999",{ 
+	var naame = document.getElementById("nameInp");
+	var nam = new Inputmask({ 
 		showMaskOnHover: false,
+		showMaskOnFocus: false,
+		regex: '^[а-яёА-ЯЁ]+ [а-яёА-ЯЁ]+ [а-яёА-ЯЁ]+$',
+		// onKeyDown: function(event, buffer, caretPos, opts){
+
+		// }
+		// onKeyDown: function (event, buffer, caretPos, opts) {
+		// 	console.log(event, buffer, caretPos, opts)
+		// 	// if (key >= 48 && key <= 57){
+		// 	// 	return false
+		// 	// }
+
+	 //    }
+	});
+
+	nam.mask(naame);
+	var nodes = document.getElementById("birth");
+	var im = new Inputmask({ 
+		showMaskOnHover: false,
+		alias: "date",
 		"placeholder": "ДД/ММ/ГГГГ",
+		yearrange: {
+			minyear: 1900, 
+			maxyear: (new Date()).getFullYear() - 15
+		}
 	});
 	im.mask(nodes);
+	var birth = document.getElementById("telInp");
+	var bi = new Inputmask("+375 (99) 999 99 99",{ 
+		showMaskOnHover: false,
+	});
+	bi.mask(birth);
 }
 function validateForms() {
 	var form_form = $('.js-validate');

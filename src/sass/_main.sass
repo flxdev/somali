@@ -549,6 +549,11 @@ body
 		font-size: 0
 		+rem(margin-right,-100px)
 		counter-reset: num
+		.btn
+			display: block
+			+rem(margin,-25px auto)
+			+rem(max-width,250px)
+			text-align: center
 		.textblock
 			counter-increment: num
 			position: relative
@@ -568,12 +573,15 @@ body
 		+rem(padding-right,100px)
 		margin-bottom: 11.5vh
 		+rem(padding-left,34px)
+		&.w100p 
+			width: 100%
 		+r(600)
 			+rem(padding-left,25px)
 		+r(800)
 			width: 100%
 			&:not(.textblock)
 				padding-left: 0
+
 		&:first-child
 			transition-delay: .1s
 		&:nth-child(2)
