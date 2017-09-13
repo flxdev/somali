@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Гильдия Сомелье</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <meta content="True" name="HandheldFriendly">
@@ -13,6 +13,7 @@
     <meta name="format-detection" content="address=no">
     <meta name="msapplication-TileColor" content="#1a1a1a">
     <link rel="stylesheet" media="all" href="css/screen.min.css">
+	<link rel="shortcut icon" href="img/pic.png" type="image/png">
   </head>
   <body>
     <script type="text/javascript">!function(e){function t(o){if(n[o])return n[o].exports;var c=n[o]={exports:{},id:o,loaded:!1};return e[o].call(c.exports,c,c.exports,t),c.loaded=!0,c.exports}var n={};return t.m=e,t.c=n,t.p="/assets/",t(0)}({0:function(e,t,n){n(18),n(19)},18:function(e,t){!function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(c))o(localStorage.font_css_cache);else{var e=new XMLHttpRequest;e.open("GET",c,!0),e.onreadystatechange=function(){4===e.readyState&&(o(e.responseText),localStorage.font_css_cache=e.responseText,localStorage.font_css_cache_file=c)},e.send()}else{var n=document.createElement("link");n.href=c,n.rel="stylesheet",n.type="text/css",document.getElementsByTagName("head")[0].appendChild(n),document.cookie="font_css_cache"}}function o(e){var t=document.createElement("style");t.setAttribute("type","text/css"),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t),window.onFontLoad&&window.onFontLoad()}var c=window.fonts_href||"../css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}()},19:function(e,t){}});</script>
@@ -62,12 +63,12 @@
                 <path fill="#D7D7D7" fill-rule="evenodd" d="M0 26.2h45.9v.4H0zm73.5 0h45.9v.4H73.5z" clip-path="url(#h)" clip-rule="evenodd"></path>
               </svg>
             </div>
-            <form class="js-validate form send-mail anim-cont" action="_scripts/send_mail.php">
+            <form class="js-validate form send-mail anim-cont" action="_scripts/send_mail.php" method="post">
               <div class="title">Хотите клубную карту?</div>
               <div class="text">Заполните анкетные данные и мы вам перезвоним</div>
               <div class="input-item">
                 <div class="input-wrapper">
-                  <input class="input-main" id="nameInp" type="text" name="name" data-validation="length" data-validation-length="min10" autocomplete="off" data-validation-error-msg="Введите ФИО без сокращений" placeholder="Иванов Иван Иванович">
+                  <input class="input-main" id="nameInp" type="text" name="FIELDS[name]" data-validation="length" data-validation-length="min10" autocomplete="off" data-validation-error-msg="Введите ФИО без сокращений" placeholder="Иванов Иван Иванович">
                   <label class="input-label" for="#nameInp">ФИО</label>
                   <div class="input-line">
                     <div class="input-line-inner"></div>
@@ -76,7 +77,7 @@
               </div>
               <div class="input-item">
                 <div class="input-wrapper">
-                  <input class="input-main" id="birth" type="tel" name="birth" data-validation="custom" data-validation-regexp="^[-0-9()/+ ]+$" data-validation-error-msg="Поле заполнено неправильно" placeholder="ДД/ММ/ГГГГ">
+                  <input class="input-main" id="birth" type="tel" name="FIELDS[birth]" data-validation="custom" data-validation-regexp="^[-0-9()/+ ]+$" data-validation-error-msg="Поле заполнено неправильно" placeholder="ДД/ММ/ГГГГ">
                   <label class="input-label" for="#birth">Дата рождения</label>
                   <div class="input-line">
                     <div class="input-line-inner"></div>
@@ -85,7 +86,7 @@
               </div>
               <div class="input-item">
                 <div class="input-wrapper">
-                  <input class="input-main" id="mailInp" type="email" name="email" data-validation="email required" data-validation-error-msg="Поле заполнено неправильно">
+                  <input class="input-main" id="mailInp" type="email" name="FIELDS[email]" data-validation="email required" data-validation-error-msg="Поле заполнено неправильно">
                   <label class="input-label" for="#mailInp">Email </label>
                   <div class="input-line">
                     <div class="input-line-inner"></div>
@@ -94,7 +95,7 @@
               </div>
               <div class="input-item">
                 <div class="input-wrapper">
-                  <input class="input-main" id="telInp" type="tel" name="tel" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле заполнено неправильно">
+                  <input class="input-main" id="telInp" type="tel" name="FIELDS[tel]" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле заполнено неправильно">
                   <label class="input-label" for="#telInp">Телефон  </label>
                   <div class="input-line">
                     <div class="input-line-inner"></div>
@@ -105,7 +106,7 @@
                 <div class="input-wrapper">
                   <div class="select-u-item">
                     <label class="input_label"><span class="input_main">
-                        <input class="input-real" type="checkbox" name="rules" value="y"><span class="input-checked"></span></span><span class="input-text">Получать информацию о мероприятиях и акциях Клуба Сомелье</span></label>
+                        <input class="input-real" type="checkbox" name="FIELDS[rules]" value="y" checked="checked"><span class="input-checked"></span></span><span class="input-text">Получать информацию о мероприятиях и акциях Клуба Сомелье</span></label>
                   </div>
                 </div>
               </div>
@@ -126,7 +127,7 @@
       </div>
       <div class="wrapper about">
         <div class="page__bg">
-          <div class="page__bg-inner" style="background-image: url(/img/logot.png);"></div>
+          <div class="page__bg-inner" style="background-image: url(img/logot.png);"></div>
         </div>
         <div class="box">
           <div class="content">
@@ -140,12 +141,12 @@
                       <div class="slider-element-inner" style="background-image: url(&quot;img/1.jpg&quot;);"></div>
                     </div>
                     <div class="slider-element">
-                      <div class="slider-element-inner" style="background-image: url(&quot;img/1.jpg&quot;);">
+                      <div class="slider-element-inner" style="background-image: url(&quot;img/2.jpg&quot;);">
                         <!-- iframe(width='560', height='315', src='https://www.youtube.com/embed/UgsS3nhRRzQ', frameborder='0', allowfullscreen='')-->
                       </div>
                     </div>
                     <div class="slider-element">
-                      <div class="slider-element-inner" style="background-image: url(&quot;img/1.jpg&quot;); ;"></div>
+                      <div class="slider-element-inner" style="background-image: url(&quot;img/3.jpg&quot;); ;"></div>
                     </div>
                   </div>
                 </div>
